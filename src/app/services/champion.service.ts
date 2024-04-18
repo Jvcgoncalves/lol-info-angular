@@ -18,7 +18,6 @@ export class ChampionService {
     .catch(error =>{
       console.log(error);
     })
-    console.log(response);
     return response!
   }
 }

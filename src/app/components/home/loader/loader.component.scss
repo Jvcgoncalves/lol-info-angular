@@ -1,6 +1,44 @@
-.spinner-border-div{
-  .spinner-border{
-    width: 4rem;
-    height: 4rem;
+@import "../../../sass/importVariables.scss";
+
+.loading-div{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 1050;
+  background-color: #2222227a;
+  .loading-message{
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+    @include font-styles($main-font, 2.5rem ,$font-color);
+    
+    .loading-dots-animation{
+      &:nth-child(2){
+        margin-left: .25rem;
+        color: red;
+      }
+      &:nth-child(3){
+        color: blue;
+      }
+      &:nth-child(4){
+        color: green;
+      }
+    }
+  }
+}
+
+@keyframes dotsAnimation {
+  0%{
+
+  }
+  50%{
+
+  }
+  100%{
+    
   }
 }

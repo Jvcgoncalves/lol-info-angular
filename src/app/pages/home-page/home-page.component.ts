@@ -21,9 +21,9 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.champsService.getAllChamps().then(res =>{
-      console.log(res);
-      this.allChampions = res
-      this.championsToShow = this.allChampions
+      // console.log(res);
+      // this.allChampions = res
+      // this.championsToShow = this.allChampions
     }).catch(err=>{
       console.log(err);
     })

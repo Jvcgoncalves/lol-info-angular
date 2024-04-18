@@ -5,9 +5,18 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <div id="loader" class="spinner-border-div d-flex justify-content-center align-items-center mt-5">
-      <div class="spinner-border text-warning " role="status">
-          <span class="visually-hidden">Loading...</span>
+    <div class="loading-div">
+      <div class="loading-message d-flex justify-content-center align-items-center" role="status">
+        <span>Carregando</span>
+        <span class="loading-dots-animation">
+          .
+        </span>
+        <span class="loading-dots-animation">
+          .
+        </span>
+        <span class="loading-dots-animation">
+          .
+        </span>
       </div>
     </div>
   `,

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ChampionData } from '../../interface/champion-data';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,8 @@ export class HeaderComponent {
   searchChampionsForm: FormGroup = new FormGroup({
     typedSearch: new FormControl([""])
   })
+  @Input() allChampionsArray!: ChampionData[];
+  @Output() searchChampionsByTypeResponse = new EventEmitter();
 
   constructor() { }
 
@@ -19,9 +22,11 @@ export class HeaderComponent {
 
   }
 
-  typingSearch(event: Event){
+  typingSearch(event: Event): ChampionData[]{
     const typedData = event.target as HTMLInputElement
+    console.log(typedData.value);
     
+    return []
   }
   
 }
