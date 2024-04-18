@@ -1,0 +1,18 @@
+<div class="d-grid all-champs justify-content-center gap-3">
+  <div *ngFor="let champ of championsToShow" class="champs-divs rounded-top mb-5">
+    <img [src]="formatChampionImage(champ.id)" alt="{{champ.name}}-image" class="champ-images rounded-top">
+    <figure class="text-div-content px-3 py-1">
+      <blockquote class="blockquote">
+        <h3>
+          {{ champ.name }}
+        </h3>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        {{ champ.title }}
+      </figcaption>
+    </figure>
+    <a routerLink="champion/{{champ.id}}" class="btn btn-primary see-more-button">
+      Saber mais
+    </a>
+  </div>
+</div>

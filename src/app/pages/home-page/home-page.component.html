@@ -1,0 +1,12 @@
+<div id="App">
+  <app-header></app-header>
+  <div class="container d-flex flex-column align-items-center py-4">
+    <h2 class="text-center mb-4">Lol Info</h2>
+    <div>
+
+    </div>
+    <app-loader *ngIf="!championsToShow"></app-loader>
+    <app-champion-block *ngIf="championsToShow.length > 0" [championsToShow]="championsToShow"></app-champion-block>
+    
+</div>
+</div>
