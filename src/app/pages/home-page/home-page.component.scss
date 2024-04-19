@@ -8,3 +8,7 @@
     @include font-gradient(90deg , #785A28, 0%, #C89B3C, 100%) // gradient
   }
 }
+
+.error-block{
+  @include font-styles($main-font, 1rem ,$font-color);  // font config
+}

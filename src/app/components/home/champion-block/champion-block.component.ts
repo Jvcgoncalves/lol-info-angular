@@ -13,7 +13,10 @@ import { RouterModule } from '@angular/router';
 export class ChampionBlockComponent {
   @Input() championsToShow!: ChampionData[];
   
-  constructor() { }
+  constructor() {
+    console.log(this.championsToShow);
+    
+   }
 
   formatChampionImage(champId: string){
     return `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champId}_0.jpg`

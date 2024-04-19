@@ -6,17 +6,20 @@ import { ChampExtraInfo, SingleChampionData, Spell } from '../../interface/champ
 import { LoaderComponent } from '../../components/home/loader/loader.component';
 import { CommonModule } from '@angular/common';
 import { ChampAbilitiesComponent } from '../../components/champ-details/champ-abilities/champ-abilities.component';
+import { ChampExtraInfoComponent } from '../../components/champ-details/champ-extra-info/champ-extra-info.component';
+import ExtraDataFormat from '../../classes/ExtraDataFormat';
 
 @Component({
   selector: 'app-champion-details',
   standalone: true,
-  imports: [HeaderComponent,LoaderComponent,CommonModule, ChampAbilitiesComponent],
+  imports: [HeaderComponent,LoaderComponent,CommonModule, ChampAbilitiesComponent, ChampExtraInfoComponent],
   templateUrl: './champion-details.component.html',
   styleUrl: './champion-details.component.scss'
 })
 export class ChampionDetailsComponent implements OnInit {
-  champData!: SingleChampionData
-  extraDataInfoArray!: ChampExtraInfo[];
+  champData!: SingleChampionData;
+  extraDataInfoArray: ChampExtraInfo[] = [];
+  getError!: boolean;
 
   constructor(private championsService: ChampionService, private activatedRoute: ActivatedRoute) { }
 
@@ -25,13 +28,18 @@ export class ChampionDetailsComponent implements OnInit {
     this.championsService.getSingleChamp(champId)
     .then((res) =>{
       this.champData = res  
-      
-      
+
       this.champData.spells.forEach((currentSpell: Spell,index : number) => {
         currentSpell.whichIs = this.formatSpells(index)
       })
+      this.setExtraDataInfoArray()
+      
     })
-    .catch(err => err)
+    .catch(err => {
+      console.log(err);
+      console.log(this.champData);
+      this.getError = !this.getError
+    })
   }
 
   formatChampionImage(champId: string){
@@ -54,6 +62,8 @@ export class ChampionDetailsComponent implements OnInit {
   }
 
   setExtraDataInfoArray(){
-    this.extraDataInfoArray.push()
+    this.extraDataInfoArray.push(new ExtraDataFormat("Champion Lore", this.champData.lore))
+    this.extraDataInfoArray.push(new ExtraDataFormat("Tips for playing against", this.champData.enemytips))
+    this.extraDataInfoArray.push(new ExtraDataFormat("Tips for playing with", this.champData.allytips))
   }
 }

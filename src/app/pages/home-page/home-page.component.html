@@ -1,11 +1,15 @@
 <div id="App">
   <app-header (searchChampionsByTypeResponse)="onSearchChampionsByTypeResponse($event)" [allChampionsArray]="allChampions" [currentPage]="'home'"></app-header>
   <div class="container d-flex flex-column align-items-center py-4">
-    <h2 class="text-center mb-4">Lol Info</h2>
-    <div>
-
-    </div>
-    <app-loader *ngIf="!championsToShow; else championsToShowBlock"></app-loader>
+    <h2 class="headline-text text-center mb-4">Lol Info</h2>
+    <app-loader *ngIf="!championsToShow && !getError; else getResponseError"></app-loader>
+    <ng-template #getResponseError>
+      <div class="error-block" *ngIf="getError; else championsToShowBlock">
+        <p>
+          Problemas ao renderizar arquivos, tente novamente mais tarde
+        </p>
+      </div>
+    </ng-template>
     <ng-template #championsToShowBlock>
       <app-champion-block  *ngIf="championsToShow.length > 0" [championsToShow]="championsToShow"></app-champion-block>
     </ng-template>

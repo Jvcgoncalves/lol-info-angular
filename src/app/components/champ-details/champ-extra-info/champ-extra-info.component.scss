@@ -1,0 +1,116 @@
+@import "../../../sass/importVariables.scss";
+
+.champ-extra-info{
+    
+  max-width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content;
+  background-color: $second-color;
+  max-height: 4.5rem;
+  overflow: hidden;
+  transition: max-height 1.5s ease;
+  cursor: pointer;
+
+  .h3{
+    @include font-styles($second-font, 2.2rem ,$font-color);  
+    display: grid;
+    grid-template-columns: 1fr auto;
+    
+    &::after{
+      content: '';
+      background: url('../../../../assets/chevron-down.svg');
+      height: 2rem;
+      width: 2rem;
+      align-self: center;
+      justify-self: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      transition: .5s;
+    }
+  }
+
+  p{
+    @include font-styles($main-font, 1.2rem ,$font-color);  
+    white-space: pre-line;
+  }
+
+  &.active{
+    max-height: 100%;
+
+    .h3::after{
+      rotate: -180deg;
+    }
+  }
+}
+
+@media (min-width: 1441px) {
+  .champ-extra-info{
+    max-height: 5.1rem;
+    transition: max-height 1.5s ease;  
+
+    .h3{
+      font-size: 2.7rem; 
+      
+      &::after{
+        height: 2.7rem;
+        width: 2.7rem;
+      }
+    }
+
+    p{
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media (max-width:1124px) {
+  .champ-extra-info{
+  
+    .h3{
+      font-size: 2rem;
+      
+      &::after{
+        height: 1.7rem;
+        width: 1.7rem;
+      }
+    }
+  } 
+}
+
+@media (max-width: 425px) {
+  .champ-extra-info{
+    max-height: 3.5rem;
+
+    .h3{
+      font-size: 1.4rem;
+      
+      &::after{
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    } 
+
+    p{
+      font-size: .9rem;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .champ-extra-info{
+    max-height: 3.5rem;
+
+    .h3{
+      font-size: 1.2rem;
+      
+      &::after{
+        height: 1.2rem;
+        width: 1.2rem;
+      }
+    } 
+
+    p{
+      font-size: .9rem;
+    }
+  }
+}

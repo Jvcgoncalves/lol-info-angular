@@ -47,7 +47,10 @@
   }
 }
 
-@media (min-width: 1141px) {
+@media (min-width: 1441px) {
+  .header{
+    height: 8rem;
+  }
   #return-to-home-page{
     font-size: 2.5rem;
   }
@@ -55,7 +58,6 @@
 
 @media (max-width: 768px) {
   .header{
-
     .navbar{
       .search-champs{
         

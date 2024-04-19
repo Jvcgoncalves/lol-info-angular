@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 export class HomePageComponent implements OnInit {
   allChampions!: ChampionData[];
   championsToShow!: ChampionData[];
+  getError!: boolean;
 
   constructor(private champsService: ChampionService) { }
 
@@ -26,7 +27,12 @@ export class HomePageComponent implements OnInit {
       this.championsToShow = this.allChampions
     }).catch(err=>{
       console.log(err);
+      
+      this.getError = true
     })
+
+    console.log("a");
+    
   }
 
   onSearchChampionsByTypeResponse(event: any){
