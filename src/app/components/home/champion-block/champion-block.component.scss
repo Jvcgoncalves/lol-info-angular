@@ -29,10 +29,31 @@
     }
   
     .see-more-button{ // button to see more infomations about champ config
-      width: 12.6875rem;
-      height: 2.5rem;
+      display: block;
+      width: 10rem;
+      height: 2.75rem;
       background-color: $btn-color;
       @include font-styles($main-font, 1.25rem ,#fff); // font config
     }
+  }
+}
+
+
+@media (min-width: 1441px){
+  .all-champs{
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+
+
+@media (max-width: 1124px){
+  .all-champs{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .all-champs{
+    grid-template-columns: 1fr;
   }
 }

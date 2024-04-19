@@ -9,6 +9,16 @@
   left: 0;
   z-index: 1000;
 
+  #return-to-home-page{
+    border-color: $second-color;
+    cursor: pointer;
+    @include font-styles($main-font, 2.2rem ,$bg-color);
+    &:hover{
+      color: $second-color;
+    }
+    color: $second-color;
+  }
+
   .navbar{ // nav bar config
     height: 100%;
     width: 90%;
@@ -33,5 +43,101 @@
   .logo{ // site logo
     width: 5rem;
     height: 5rem;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1141px) {
+  #return-to-home-page{
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header{
+
+    .navbar{
+      .search-champs{
+        
+        .search-button{
+          font-size: 1rem;
+          padding: .2rem .5rem ;
+        }
+  
+        .search-champs-input{
+          width: 18rem;
+          height: 2.3rem;
+        }
+      }
+      
+    }
+  
+    .logo{
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .header{
+    height: 8rem;
+    .navbar{
+      position: relative;
+
+      .search-champs{
+        position: relative;
+        background-color: $main-color;
+        .search-button{
+          font-size: 1.1rem;
+          padding: .2rem .5rem ;
+        }
+  
+        .search-champs-input{
+          position: absolute;
+          width: 0;
+          overflow: hidden;
+          visibility: hidden;
+          height: 2rem;
+          right: 1.3rem;
+          top: 2.7rem;
+          transition: .3s;
+        }
+
+        #champs-input.active{
+          visibility: visible;
+          width: 18rem;
+        }
+      } 
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .header{
+    .navbar{
+      .search-champs{
+        #champs-input.active{
+          width: 14rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+
+  #return-to-home-page{
+    font-size: 2rem;
+  }
+  
+  .header{
+    .navbar{
+      .search-champs{
+        #champs-input.active{
+          width: 14rem;
+        }
+      }
+    }
   }
 }

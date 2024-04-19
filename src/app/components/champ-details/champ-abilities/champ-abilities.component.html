@@ -1,0 +1,9 @@
+<div class="spells-div">
+  <img [src]="formatImageUrl()" alt="">
+  <span>
+    {{spell ? spell.whichIs : "Passive" }}: {{spell ? spell.name : passive.name}}
+  </span>
+  <p class="mt-2">
+    {{spell ? spell.description : passive.description}}
+  </p>
+</div> 

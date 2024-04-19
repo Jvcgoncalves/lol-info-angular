@@ -11,6 +11,43 @@ export interface ChampionData {
   title: string;
 }
 
+export interface SingleChampionData {
+  allytips: string[];
+  blurb: string;
+  enemytips: string[]
+  id: string;
+  image: Image;
+  info: Info;
+  key: string;
+  lore: string;
+  name: string;
+  partype: string;
+  passive: Passive;
+  skins: Spell[];
+  spells: [];
+  stats: Stats;
+  tags: string[];
+  title: string;
+}
+
+export interface Spell{
+  name: string;
+  image: { full: string };
+  description: string;
+  whichIs: string
+}
+
+export interface ChampExtraInfo{
+  whichIs: string;
+  content: string[] | string;
+}
+
+export interface Passive {
+  name: string;
+  image: { full: string };
+  description: string
+}
+
 export interface ApiReturnData{
   data: {},
   format: string,

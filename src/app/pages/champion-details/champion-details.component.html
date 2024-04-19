@@ -1,1 +1,75 @@
-<p>champion-details works!</p>
+<app-header [currentPage]="'champ-details'"></app-header>
+<app-loader *ngIf="!champData; else champInfo"></app-loader>
+<ng-template #champInfo>
+  <div class="container py-4" >
+    <h2 class="h2 text-center mb-4" id="headline-text">Champion information</h2>
+    <div class="d-grid gap-3">
+      <!-- Initial info, name, title and image -->
+      <div class="champ-main-info d-flex flex-wrap row-gap-4 column-gap-3 p-3 rounded">
+        <!-- Champ image -->
+        <img id="champ-img" class="rounded" [src]="formatChampionImage(champData.id)" alt="{{champData.name}}-image">
+        <!-- champ name and title div to use d-flex -->
+        <div class="champ-name-title-div">
+          <h3 id="champ-name">{{champData.name}}</h3>
+          <span id="champ-title">{{champData.title}}</span>
+        </div>
+        <div class="champ-stats d-flex flex-column gap-2">
+          <!-- Champ dependenci to use spells -->
+          <div class="champ-stats-item">
+            <span>
+              Dependency/Use:
+            </span>
+            <span id="champ-dependencies">
+              {{champData.partype}}
+            </span>
+          </div>
+          <!-- Champ style, like a mage, tank... -->
+          <div class="champ-stats-item">
+            <span>
+              Play style:
+            </span>
+            <span id="champ-type">
+              {{champData.tags}}
+            </span>
+          </div>
+          <!-- Champ spells -->
+          <div class="champ-stats-item skills-div d-flex flex-column gap-2 mt-4">
+            <app-champ-abilities [isPassive]="true" [passive]="champData.passive">
+              
+            </app-champ-abilities>
+            <app-champ-abilities
+            *ngFor="let spells of champData.spells"
+            [spell]="spells"
+            ></app-champ-abilities>
+            <!-- Champ spells end -->
+          </div>
+        </div>
+      </div>
+      <!-- Champ history (lore) -->
+  
+      <div class="extra-info d-flex row-gap-3 flex-column">
+        <section class="champ-extra-info d-grid gap-2 p-3 rounded">
+          <h3 class="h3">
+            História do campeão
+          </h3>
+          <p id="champ-lore">
+          </p>
+        </section>
+        <section class="champ-extra-info d-grid gap-2 p-3 rounded">
+          <h3 class="h3">
+            Dicas para jogar com
+          </h3>
+          <p id="champ-allytips">
+          </p>
+        </section>
+        <section class="champ-extra-info d-grid gap-2 p-3 rounded">
+          <h3 class="h3">
+            Dicas para jogar contra
+          </h3>
+          <p id="champ-enemytips">
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+</ng-template>

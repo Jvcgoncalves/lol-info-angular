@@ -1,5 +1,5 @@
 <div id="App">
-  <app-header [allChampionsArray]="allChampions"></app-header>
+  <app-header (searchChampionsByTypeResponse)="onSearchChampionsByTypeResponse($event)" [allChampionsArray]="allChampions" [currentPage]="'home'"></app-header>
   <div class="container d-flex flex-column align-items-center py-4">
     <h2 class="text-center mb-4">Lol Info</h2>
     <div>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ApiReturnData, ChampionData } from '../interface/champion-data';
+import { ApiReturnData, ChampionData, SingleChampionData } from '../interface/champion-data';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +19,13 @@ export class ChampionService {
       console.log(error);
     })
     return response!
+  }
+
+  getSingleChamp = async (champId: string): Promise<SingleChampionData> =>{
+    const response = await fetch(this.url.replace("champion.json",`champion/${champId}.json`)).then( res => res.json())
+    .catch(err => {
+      return err
+    })
+    return response.data?.[champId]!
   }
 }
