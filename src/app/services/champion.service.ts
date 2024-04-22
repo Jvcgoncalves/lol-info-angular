@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ApiReturnData, ChampionData, SingleChampionData } from '../interface/champion-data';
+import {  ChampionData, SingleChampionData } from '../interface/champion-data';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +26,6 @@ export class ChampionService {
     .catch(err => {
       return err
     })
-    return response.data?.[champId]!
+    return response.data?.[champId]
   }
 }

@@ -6,6 +6,11 @@
   margin-top: 3rem;
 }
 
+.headline-text{
+  @include font-styles($second-font, 3rem ,$font-color);  // font config
+  @include font-gradient(90deg , #785A28, 0%, #C89B3C, 100%) // gradient
+}
+
 .d-grid{
   grid-template-columns: repeat(2,1fr);
   .champ-main-info{
@@ -124,17 +129,15 @@
 }
 
 @media (max-width: 425px){
-  .container{
-    #headline-text{
-      font-size: 2.5rem;
-    }
+  .headline-text{
+    font-size: 2.25rem;
   }
 
   .d-grid{
     .champ-main-info{
       #champ-img{ // Champ image
-        width: 6rem;
-        height: 6rem;  
+        width: 5rem;
+        height: 5rem;  
       }
       .champ-name-title-div{ // Champ name and title div
         #champ-name{

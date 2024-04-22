@@ -1,10 +1,12 @@
 <section class="champ-extra-info d-grid gap-2 p-3 rounded" 
 (click)="toggleChampExtraInfo($event)"
+(keydown.enter)="toggleChampExtraInfo($event)"
+tabindex="0"
+*ngIf="extraInfoData.content.length > 0 "
 >
   <h3 class="h3">
     {{extraInfoData.whichIs}}
   </h3>
-  <p id="champ-lore">
-    {{extraInfoData.content}}
+  <p id="champ-lore" [innerHTML]="extraInfoData.content" >
   </p>
 </section>

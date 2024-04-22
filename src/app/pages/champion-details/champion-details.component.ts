@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { ChampionService } from '../../services/champion.service';
 import { ActivatedRoute } from '@angular/router';

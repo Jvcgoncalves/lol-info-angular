@@ -49,7 +49,7 @@ export interface Passive {
 }
 
 export interface ApiReturnData{
-  data: {},
+  data: any,
   format: string,
   type: string,
   version: string

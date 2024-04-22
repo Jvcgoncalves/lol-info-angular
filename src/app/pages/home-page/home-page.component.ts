@@ -25,17 +25,16 @@ export class HomePageComponent implements OnInit {
     this.champsService.getAllChamps().then(res =>{
       this.allChampions = res
       this.championsToShow = this.allChampions
-    }).catch(err=>{
-      console.log(err);
-      
+    }).catch(()=>{
       this.getError = true
     })
-
-    console.log("a");
-    
   }
 
-  onSearchChampionsByTypeResponse(event: any){
+  onSearchChampionsByTypeResponse(event: any): void{
     this.championsToShow = event?.championsMatched
+  }
+
+  toggleSearchInput(): void{
+    
   }
 }

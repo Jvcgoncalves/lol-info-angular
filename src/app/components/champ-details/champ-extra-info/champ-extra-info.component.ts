@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ChampExtraInfo } from '../../../interface/champion-data';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-champ-extra-info',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './champ-extra-info.component.html',
   styleUrl: './champ-extra-info.component.scss'
 })
@@ -14,13 +15,12 @@ export class ChampExtraInfoComponent implements OnInit {
   constructor()  { }
 
   ngOnInit(): void {
-      if(Array.isArray(this.extraInfoData.content)){
-        this.extraInfoData.content = this.extraInfoData.content.reduce((finalValue: string, currentValue: string, index: number)=>{
-          finalValue += `${index+1} - ${currentValue} \n`
-          return finalValue
-        }, "")
-        
-      }
+    if(Array.isArray(this.extraInfoData.content)){
+      this.extraInfoData.content = this.extraInfoData.content.reduce((finalValue: string, currentValue: string, index: number)=>{
+        finalValue += `${index+1} - ${currentValue} \n`
+        return finalValue
+      }, "")
+    }
   }
 
   toggleChampExtraInfo(event: Event){
