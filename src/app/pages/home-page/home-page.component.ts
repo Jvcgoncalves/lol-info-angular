@@ -18,6 +18,7 @@ export class HomePageComponent implements OnInit {
   allChampions!: ChampionData[];
   championsToShow!: ChampionData[];
   getError!: boolean;
+  renderLimit: number = 15;
 
   constructor(private champsService: ChampionService) { }
 
@@ -34,7 +35,7 @@ export class HomePageComponent implements OnInit {
     this.championsToShow = event?.championsMatched
   }
 
-  toggleSearchInput(): void{
-    
+  expandChampionsArray(): void{
+    this.renderLimit+=15;
   }
 }

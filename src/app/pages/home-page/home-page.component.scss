@@ -12,3 +12,20 @@
 .error-block{
   @include font-styles($main-font, 1rem ,$font-color);  // font config
 }
+
+.expand-champions-button{
+  width: 11rem;
+  height: 2.75rem;
+  background-color: $btn-color;
+  @include font-styles($main-font, 1rem ,#fff);
+  vertical-align: middle;
+}
+
+@media (max-width: 425px) {
+  .expand-champions-button{
+    font-size: .9rem;
+    width: 9rem;
+    height: 2.75rem;
+  
+  }
+}

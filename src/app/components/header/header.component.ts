@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements OnChanges{
+export class HeaderComponent {
   searchChampionsForm: FormGroup = new FormGroup({
     typedSearch: new FormControl([""])
   })
@@ -24,10 +24,6 @@ export class HeaderComponent implements OnChanges{
   @ViewChild('searchInput') searchInput!: ElementRef;
   @ViewChild('searchResultsDiv') searchResultsDiv !: ElementRef;
   constructor() { }
-
-  ngOnChanges(): void {
-    this.champsFoundBySearch = this.allChampionsArray
-  }
 
   typingSearch(event: Event){
     const typedData = event.target as HTMLInputElement
@@ -73,11 +69,14 @@ export class HeaderComponent implements OnChanges{
   }
 
   searchChamp({typedTextFormated}: {typedTextFormated: string}): void{
-    this.champsFoundBySearch = this.allChampionsArray.filter(champ => champ.id.toLowerCase().match(typedTextFormated) || champ.name.toLowerCase().match(typedTextFormated))
+    this.champsFoundBySearch = this.allChampionsArray.filter(champ => champ.id.toLowerCase().match(`^${typedTextFormated}`) || champ.name.toLowerCase().match(`^${typedTextFormated}`))
 
     this.searchChampionsByTypeResponse.emit({
       championsMatched: this.champsFoundBySearch
     })
 
+    if(this.searchInput.nativeElement.value === ''){
+      this.champsFoundBySearch = []
+    }
   }
 }

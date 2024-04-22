@@ -68,3 +68,11 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 425px) {
+  .loading-div{
+    .loading-message{
+      font-size: 2rem;
+    }
+  }
+}

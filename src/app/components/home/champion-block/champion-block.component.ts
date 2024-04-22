@@ -12,10 +12,15 @@ import { RouterModule } from '@angular/router';
 })
 export class ChampionBlockComponent {
   @Input() championsToShow!: ChampionData[];
-  
+  @Input() renderLimit!: number;
+
   constructor() { }
 
   formatChampionImage(champId: string){
     return `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champId}_0.jpg`
+  }
+
+  expandChampionsArray(){
+    this.renderLimit += 15
   }
 }
