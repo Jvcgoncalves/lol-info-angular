@@ -1,18 +1,17 @@
 ## Lol-info
 
-Website for find ou some information about League of Leagends champions
+Rebuilt with angular website for find ou some information about League of Leagends champions
 Have nice discoveries
 
 ## Technology
 
-Techs i used to develop this project
+Techs I used to develop this project
 
-- Java Script ES6
+- TypeScript
 - Sass
 - Npm
 - Git
-- Babel
-- Webpacker
+- Angular
 
 ## Services Used
 
@@ -23,31 +22,31 @@ Techs i used to develop this project
 
 ### 1 - When you access, you will see the main page, which just show the current time
 
-![image](https://github.com/Jvcgoncalves/Lol-champs/assets/127047416/5f5df025-fa3f-464e-beb6-125633806927)
+![image](https://github.com/Jvcgoncalves/lol-info-angular/assets/127047416/c6b80836-ad09-4571-93cb-cafa20c6222a)
 
 ### 2 - At the top you have a seach function.
 
-![image](https://github.com/Jvcgoncalves/Lol-champs/assets/127047416/74223adf-f0af-43cc-9d57-5fcd19835802)
+![image](https://github.com/Jvcgoncalves/lol-info-angular/assets/127047416/b8fd7f33-9686-43da-a30b-d1ecf977c88c)
 
 #### 2.1 For mobile, is just touch the magnifying glass
 ![image](https://github.com/Jvcgoncalves/Lol-champs/assets/127047416/0b1f517f-37c1-4bb7-be43-6fecc2e3047f)
-![image](https://github.com/Jvcgoncalves/Lol-champs/assets/127047416/931e8beb-d21c-4623-ada4-037280d10fd1)
+![image](https://github.com/Jvcgoncalves/lol-info-angular/assets/127047416/4f9e4f6d-48bb-40b6-92f0-293de7ac1714)
 
-### 3 - On the champion card you can click the button 'Saber mais' to see more info about the current champ
+### 3 - On the champion card you can click the button 'Learn more' to see more info about the current champ
 
-![image](https://github.com/Jvcgoncalves/Lol-champs/assets/127047416/065fd9c3-5185-4f83-b4df-3336cca0ef7e)
+![image](https://github.com/Jvcgoncalves/lol-info-angular/assets/127047416/c1dc1cd9-42bf-4f19-9964-11f7f34b6864)
 
 ### 4 - Clicking you will be redirected to this page 
 
-![image](https://github.com/Jvcgoncalves/Lol-champs/assets/127047416/4e4a7d71-ede0-47dc-869d-41369c886c1e)
+![image](https://github.com/Jvcgoncalves/lol-info-angular/assets/127047416/bce10e30-4d32-43c0-b76c-4cd44c6dc698)
 
 ### 5 - You can click there to learn the champ lore and some tips to play with and against and scroll down to see more about champ skills and passive
 
-![image](https://github.com/Jvcgoncalves/Lol-champs/assets/127047416/26b7249b-5424-417b-9680-f89484bbe222)
+![image](https://github.com/Jvcgoncalves/lol-info-angular/assets/127047416/13f7baf0-327e-47ef-8006-38276fb44047)
 
 ### 6 - Click in anyone to go back to the previous page ( main page )
 
-![image](https://github.com/Jvcgoncalves/Lol-champs/assets/127047416/277ef62f-febf-4088-ad3b-36a2d6a9c08f)
+![image](https://github.com/Jvcgoncalves/lol-info-angular/assets/127047416/0992c1ca-fcf2-46d4-a34c-0c0a2e1390c8)
 
 ## Features
 
@@ -58,13 +57,13 @@ The features of the application are:
 
 ## Links
 
-- Deploy on netlify: https://lol-champs-info.netlify.app/champsinfo
-- Repository: https://github.com/Jvcgoncalves/Lol-champs
+- Deploy on netlify: https://lol-info-champs.netlify.app/
+- Repository: https://github.com/Jvcgoncalves/lol-info-angular
   - In case of bugs or suggestions contact goncalvesdacosta05@gmail.com
 
 ## Versioning
 
-1.0.0.0
+2.0.0.0
 
 ## Authors
 
