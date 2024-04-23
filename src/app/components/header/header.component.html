@@ -3,7 +3,7 @@
       <a routerLink=""><img class="logo" src="../../../assets/league_of_Legends.svg" alt="logo lol"></a>
       <a *ngIf="currentPage === 'champ-details'" routerLink="" id="return-to-home-page" ><i class="bi bi-arrow-left-circle-fill"></i></a>
       <div *ngIf="currentPage !== 'champ-details'" class="search-champs d-flex gap-3 pe-4 align-items-center desktop">
-          <input id="champs-input" autocomplete="off" type="text" class="search-champs-input form-control" type="search" placeholder="Procure um campeão..."
+          <input id="champs-input" autocomplete="off" type="text" class="search-champs-input form-control" type="search" placeholder="Search a champion..."
           (input)="typingSearch($event)"
           (keydown.enter)="[clickOnChampOfSearchResult($event),hideSearchResults()]"
           (keydown.escape)="hideSearchResults()"

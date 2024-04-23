@@ -1,6 +1,13 @@
 <div class="d-grid all-champs justify-content-center gap-3">
-  <div *ngFor="let champ of championsToShow.slice(0,renderLimit)" class="champs-divs rounded-top mb-5">
-    <img [src]="formatChampionImage(champ.id)" alt="{{champ.name}}-image" class="champ-images rounded-top">
+  <div
+    *ngFor="let champ of championsToShow.slice(0, renderLimit)"
+    class="champs-divs rounded-top mb-5"
+  >
+    <img
+      [src]="formatChampionImage(champ.id)"
+      alt="{{ champ.name }}-image"
+      class="champ-images rounded-top"
+    />
     <figure class="text-div-content px-3 py-1">
       <blockquote class="blockquote">
         <h3>
@@ -11,8 +18,11 @@
         {{ champ.title }}
       </figcaption>
     </figure>
-    <a routerLink="champion/{{champ.id}}" class="btn btn-primary mx-auto see-more-button">
-      Saber mais
+    <a
+      routerLink="champion/{{ champ.id }}"
+      class="btn btn-primary mx-auto see-more-button"
+    >
+      Learn more
     </a>
   </div>
 </div>
